@@ -1,0 +1,69 @@
+\documentclass{article}
+\begin{document}
+% Nice general title for now...
+\textbf{Syllabus:} Logic in Computer Science
+
+\section*{Course Description}
+This course offers a graduate-level survey of the different applications of logic in computer science,
+including programming language design, model checking, interactive and automatic theorem proving and their use in algorithms.
+
+\section*{Grading}
+\begin{itemize}
+\item Reading Summaries: 20\%
+\item 4 Programming Assignments: 50\%
+\item 1 Final Project: 30\%
+\end{itemize}
+
+\section*{Programming Assignments}
+\begin{itemize}
+\item 
+\textbf{Programming Language Theory+Implementation:}
+Implement chosen parts of an interpreter and then compiler for a toy imperative programming language:
+\begin{itemize}
+\item Implement structural operational semantics as given in lecture/handout.
+\item Implement type checker for simple type system that rules accesses to undefined variables.
+\item Implement dead-code elimination (requires implementing free/bound variables)
+\item Add garbage-collected data structures (garbage collector provided by language runtime and/or us)
+\item Implement LLVM translation (LLVM starter code + garbage collector provided by us).
+\end{itemize}
+ 
+ \item
+ \textbf{Implementation-Level Software Model-Checking}
+ \begin{itemize}
+  \item Reuses language of previous assignment both for the language-being-checked and to express propositions.
+  \item Version 1: Given P:bool, Q:bool, e:stmt where e has finite state, model-check the Hoare triple {P}e{Q}.
+  \item Version 2: Symbolically model-check {P}e{Q} (we provide interface to SMT solver). This reuses the semantics of the language from the previous assignment.
+  \item Version 3: Counter-Example-Guided Abstraction Refinement 
+  \item Other options: Write your own SAT solver, write your own BDD implementation.
+ \end{itemize}
+ 
+ \item
+ \textbf{Forward-Chaining Logic Programming}
+ \begin{itemize}
+ \item Implement Datalog interpreter using semantics given in class.
+ \item Test case (provided): interpreter for imperative language.
+ \item Write small database application.
+ \item Solve some cute algorithms problem.
+ \item Parallelize Datalog interpreter.???
+ \item Written: Correctness proofs for logic programs???
+ \end{itemize}
+
+ \item
+ \textbf{Certifying Compilation}
+ \begin{itemize}
+ \item Formalize refinement logic over imperative programs in Isabelle/HOL, including some rules for dead code elimination (and other optimizations if time - common subexpression elimination?).
+ \item Augment compiler to produce refinement proofs, which the starter code then helps export to Isabelle/HOL.
+ \item Run the exported Isabelle code with your formalization, and viola you have a certifying compiler!
+ \end{itemize}
+
+ 
+%  \item
+% \textbf{}
+% \begin{itemize}
+% \item
+% \end{itemize}
+
+\end{itemize}
+
+
+\end{document}
